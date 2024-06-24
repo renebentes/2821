@@ -36,4 +36,3 @@ Há links específicos para cada commit de finalização de uma aula.
 Copyright (c) 2024 Rene Bentes Pinto
 
 Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
