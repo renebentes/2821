@@ -27,6 +27,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | Aulas                            | Descrição                                          |
 | -------------------------------- | -------------------------------------------------- |
 | [aula-1-2](../../commit/4128a9e) | Visão Geral: Criação do App e Estrutura do Projeto |
+| [aula-1-8](../../commit/f5591ee) | Visão Geral: Gerando os Modelos                    |
 
 ## Autor
 
