@@ -1,7 +1,11 @@
 
 using BlazingShop;
+using BlazingShop.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite());
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
