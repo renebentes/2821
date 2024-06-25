@@ -24,11 +24,12 @@ Há links específicos para cada commit de finalização de uma aula.
 
 ### Lista de Aulas
 
-| Aulas                            | Descrição                                          |
-| -------------------------------- | -------------------------------------------------- |
-| [aula-1-2](../../commit/4128a9e) | Visão Geral: Criação do App e Estrutura do Projeto |
-| [aula-1-8](../../commit/f5591ee) | Visão Geral: Gerando os Modelos                    |
-| [aula-1-9](../../commit/b9f30b6) | Visão Geral: Listando dados                        |
+| Aulas                             | Descrição                                          |
+| --------------------------------- | -------------------------------------------------- |
+| [aula-1-2](../../commit/4128a9e)  | Visão Geral: Criação do App e Estrutura do Projeto |
+| [aula-1-8](../../commit/f5591ee)  | Visão Geral: Gerando os Modelos                    |
+| [aula-1-9](../../commit/b9f30b6)  | Visão Geral: Listando dados                        |
+| [aula-1-11](../../commit/a8a6e24) | Visão Geral: Componentes                           |
 
 ## Autor
 
