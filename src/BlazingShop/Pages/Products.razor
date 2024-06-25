@@ -4,12 +4,7 @@
 
 <h1>Products</h1>
 
-<ul>
-    @foreach (var product in _products)
-    {
-        <li>@product.Title</li>
-    }
-</ul>
+<ProductTableList Products="_products" />
 
 @code {
     private List<Product> _products = [];
