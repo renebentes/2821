@@ -32,6 +32,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-1-11](../../commit/a8a6e24) | Visão Geral: Componentes                           |
 | [aula-1-12](../../commit/d56b7e6) | Visão Geral: Trabalhando com Layouts               |
 | [aula-2-2](../../commit/b0f83dc)  | CRUD: Configurando o EF                            |
+| [aula-2-3](../../commit/ba69490)  | CRUD: Migrations                                   |
 
 ## Autor
 
