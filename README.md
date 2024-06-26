@@ -35,6 +35,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-2-3](../../commit/ba69490)  | CRUD: Migrations                                   |
 | [aula-2-4](../../commit/cf93674)  | CRUD: EditForm                                     |
 | [aula-2-5](../../commit/4a7e13c)  | CRUD: Bindings                                     |
+| [aula-2-6](../../commit/fea3b14)  | CRUD: Select                                       |
 
 ## Autor
 
