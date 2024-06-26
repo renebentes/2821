@@ -5,13 +5,23 @@
 <h1>New Product</h1>
 
 <EditForm Model="_model" OnValidSubmit="@HandleSubmitAsync">
-    <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <InputText id="title" class="form-control" @bind-Value="_model.Title" />
-    </div>
-
-    <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <InputTextArea id="description" class="form-control" @bind-Value="_model.Description" />
+    <div class="row mb-3">
+        <div class="col-9">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <InputText id="title" class="form-control" @bind-Value="_model.Title" />
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <InputTextArea id="description" class="form-control form-control-lg" @bind-Value="_model.Description"
+                    rows="6" />
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <InputNumber id="price" class="form-control" @bind-Value="_model.Price" />
+            </div>
+        </div>
     </div>
 </EditForm>
