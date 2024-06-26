@@ -3,4 +3,6 @@
 public partial class CreateProductPage
 {
     private readonly CreateProductInput _model = new();
+
+    async Task HandleSubmitAsync() { }
 }

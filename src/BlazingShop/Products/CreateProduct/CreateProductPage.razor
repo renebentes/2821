@@ -4,5 +4,14 @@
 
 <h1>New Product</h1>
 
-<EditForm Model="_model">
+<EditForm Model="_model" OnValidSubmit="@HandleSubmitAsync">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <InputText id="title" class="form-control" @bind-Value="_model.Title" />
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <InputTextArea id="description" class="form-control" @bind-Value="_model.Description" />
+    </div>
 </EditForm>
