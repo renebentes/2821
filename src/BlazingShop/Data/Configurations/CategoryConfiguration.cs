@@ -14,6 +14,5 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         builder.Property(c => c.Title)
                .IsRequired();
-
     }
 }

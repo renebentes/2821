@@ -10,7 +10,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("DataSo
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+                .AddInteractiveServerComponents();
 
 var app = builder.Build();
 
@@ -28,7 +28,7 @@ app.UseStaticFiles();
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+   .AddInteractiveServerRenderMode();
 
 app.UseAppDbContextSeed();
 
