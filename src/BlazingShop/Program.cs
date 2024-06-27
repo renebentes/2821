@@ -1,6 +1,7 @@
 
 using BlazingShop;
 using BlazingShop.Data;
+using BlazingShop.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,5 +29,7 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+app.UseAppDbContextSeed();
 
 app.Run();
