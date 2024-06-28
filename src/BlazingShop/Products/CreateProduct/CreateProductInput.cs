@@ -5,7 +5,7 @@ namespace BlazingShop.Products.CreateProduct;
 public class CreateProductInput
 {
     [Required(ErrorMessage = "Categoria é obrigatória")]
-    [Range(1, int.MaxValue, ErrorMessage = "Informe um Id da Categoria maior que 1")]
+    [Range(1, int.MaxValue, ErrorMessage = "O Id da categoria é inválido")]
     public int CategoryId { get; set; }
 
     public string Description { get; set; } = string.Empty;
@@ -14,7 +14,7 @@ public class CreateProductInput
 
     [Required(ErrorMessage = "Preço é obrigatório")]
     [DataType(DataType.Currency)]
-    [Range(0, 9_999.99, ErrorMessage = "Preço deve estar entre 0 e 9.999,00")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "Preço deve ser maior que 0")]
     public decimal Price { get; set; }
 
     [Required(ErrorMessage = "Título é obrigatório")]
