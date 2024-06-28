@@ -1,0 +1,19 @@
+@page "/products"
+
+@using BlazingShop.Data;
+@using Microsoft.EntityFrameworkCore
+
+@inject AppDbContext _context;
+
+<PageTitle>Products</PageTitle>
+
+<h1>Products</h1>
+
+<ProductTableList Products="_products" />
+
+@code {
+    private List<Product> _products = [];
+
+    protected override async Task OnInitializedAsync()
+    => _products = await _context.Products.AsNoTracking().ToListAsync();
+}
