@@ -44,6 +44,14 @@
         </div>
     </div>
 
+
+    @if (!string.IsNullOrEmpty(_errorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @_errorMessage
+        </div>
+    }
+
     <button type="submit" class="btn btn-success">Save</button>
     <a href="/products" class="btn btn-secondary">Cancel</a>
 

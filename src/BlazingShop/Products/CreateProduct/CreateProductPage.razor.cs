@@ -1,4 +1,5 @@
 ﻿using BlazingShop.Data;
+using BlazingShop.Models;
 using BlazingShop.Products.Common;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ namespace BlazingShop.Products.CreateProduct;
 public partial class CreateProductPage
 {
     private readonly CreateProductInput _model = new();
+    private string _errorMessage = string.Empty;
 
     private IEnumerable<GetCategoriesQuery> _categories = [];
 
@@ -21,5 +23,25 @@ public partial class CreateProductPage
                                               .ToListAsync();
     }
 
-    async Task HandleSubmitAsync() { }
+    public async Task HandleSubmitAsync()
+    {
+        try
+        {
+            var category = await Context.Categories.FindAsync(_model.CategoryId);
+
+            if (category is null)
+            {
+                _errorMessage = $"Categoria com identificador {_model.CategoryId} não encontrada";
+                return;
+            }
+
+            var product = new Product(_model.Title, _model.Description, _model.Image, _model.Price, category);
+            await Context.Products.AddAsync(product);
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = ex.Message;
+            throw;
+        }
+    }
 }
