@@ -2,12 +2,6 @@
 
 public class Product
 {
-
-    public Product()
-    {
-
-    }
-
     public Product(int id, string title, string description, string image, decimal price, Category category)
     {
         Id = id;
@@ -19,7 +13,12 @@ public class Product
         CategoryId = category.Id;
     }
 
-    public Category Category { get; set; } = new();
+    private Product()
+    {
+
+    }
+
+    public Category Category { get; set; } = null!;
 
     public int CategoryId { get; set; }
 
