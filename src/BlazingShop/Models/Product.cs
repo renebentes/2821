@@ -2,9 +2,8 @@
 
 public class Product
 {
-    public Product(int id, string title, string description, string image, decimal price, Category category)
+    public Product(string title, string description, string image, decimal price, Category category)
     {
-        Id = id;
         Title = title;
         Description = description;
         Image = image;
