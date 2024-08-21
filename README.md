@@ -38,6 +38,8 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-2-6](../../commit/fea3b14)  | CRUD: Select                                       |
 | [aula-2-7](../../commit/a7f493f)  | CRUD: Preenchendo as Categorias                    |
 | [aula-2-8](../../commit/1b2e8d0)  | CRUD: Validando Formulários                        |
+| [aula-2-9](../../commit/03c7bf9)  | CRUD: Customizando Erros                           |
+| [aula-2-10](../../commit/03c7bf9) | CRUD: Salvando o Produto                           |
 
 ## Autor
 
