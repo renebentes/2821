@@ -37,6 +37,7 @@ public partial class CreateProductPage
 
             var product = new Product(_model.Title, _model.Description, _model.Image, _model.Price, category);
             await Context.Products.AddAsync(product);
+            await Context.SaveChangesAsync();
         }
         catch (Exception ex)
         {
