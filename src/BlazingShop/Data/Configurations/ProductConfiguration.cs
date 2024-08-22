@@ -19,6 +19,6 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
                .IsRequired();
 
         builder.HasOne(p => p.Category)
-               .WithMany(p => p.Products);
+               .WithMany();
     }
 }

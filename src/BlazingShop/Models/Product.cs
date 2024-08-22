@@ -9,7 +9,6 @@ public class Product
         Image = image;
         Price = price;
         Category = category;
-        CategoryId = category.Id;
     }
 
     private Product()
@@ -18,8 +17,6 @@ public class Product
     }
 
     public Category Category { get; set; } = null!;
-
-    public int CategoryId { get; set; }
 
     public string Description { get; set; } = string.Empty;
 
