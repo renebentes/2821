@@ -13,12 +13,20 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.HasKey(p => p.Id);
 
         builder.Property(p => p.Title)
-               .IsRequired();
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(p => p.Description)
+            .IsRequired(false);
 
         builder.Property(p => p.Price)
-               .IsRequired();
+            .IsRequired()
+            .HasColumnType("MONEY");
+
+        builder.Property(p => p.Image)
+            .IsRequired(false);
 
         builder.HasOne(p => p.Category)
-               .WithMany();
+            .WithMany();
     }
 }

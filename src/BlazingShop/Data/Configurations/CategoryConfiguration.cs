@@ -13,6 +13,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.HasKey(c => c.Id);
 
         builder.Property(c => c.Title)
-               .IsRequired();
+            .IsRequired()
+            .HasMaxLength(80);
     }
 }
