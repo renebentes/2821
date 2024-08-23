@@ -18,6 +18,9 @@ public partial class CreateProductPage : ComponentBase
     [SupplyParameterFromForm]
     public CreateProductInput Model { get; set; } = new();
 
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+
     public async Task HandleSubmitAsync()
     {
         try
@@ -34,6 +37,7 @@ public partial class CreateProductPage : ComponentBase
             var product = new Product(Model.Title, Model.Description, Model.Image, Model.Price, category);
             await Context.Products.AddAsync(product);
             await Context.SaveChangesAsync();
+            NavigationManager.NavigateTo("/products");
         }
         catch (Exception ex)
         {
