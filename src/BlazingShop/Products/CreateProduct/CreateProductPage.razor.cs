@@ -1,4 +1,4 @@
-﻿using BlazingShop.Data;
+using BlazingShop.Data;
 using BlazingShop.Models;
 using BlazingShop.Products.Common;
 using Microsoft.AspNetCore.Components;
@@ -29,7 +29,6 @@ public partial class CreateProductPage : ComponentBase
 
             if (category is null)
             {
-
                 _errorMessage = $"Categoria com identificador {Model.CategoryId} não encontrada";
                 return;
             }

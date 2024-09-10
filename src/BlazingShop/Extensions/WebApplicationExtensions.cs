@@ -1,4 +1,4 @@
-﻿using BlazingShop.Data;
+using BlazingShop.Data;
 
 namespace BlazingShop.Extensions;
 
@@ -10,7 +10,8 @@ public static class WebApplicationExtensions
         using var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
         try
         {
-            context.Seed();
+            context.ApplyMigration()
+                .Seed();
         }
         catch (Exception)
         {
