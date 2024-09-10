@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlazingShop.Data;
 
-public static class AppDbContextSeed
+public static class AppDbContextExtensions
 {
     public static AppDbContext ApplyMigration(this AppDbContext context)
     {

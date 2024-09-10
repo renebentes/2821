@@ -1,4 +1,3 @@
-
 using BlazingShop;
 using BlazingShop.Extensions;
 
@@ -28,6 +27,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
    .AddInteractiveServerRenderMode();
 
-app.UseAppDbContextSeed();
+app.UseAppDbContext();
 
 app.Run();
