@@ -2,7 +2,7 @@
 
 namespace BlazingShop.Products.CreateProduct;
 
-public class CreateProductInput
+public record CreateProductInput
 {
     [Required(ErrorMessage = "Categoria é obrigatória")]
     [Range(1, int.MaxValue, ErrorMessage = "O Id da categoria é inválido")]
