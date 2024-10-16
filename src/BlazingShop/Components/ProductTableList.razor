@@ -14,7 +14,11 @@
                 <td>@product.Id</td>
                 <td>@product.Title</td>
                 <td>@product.Price.ToString("C")</td>
-                <td></td>
+                <td>
+                    <a class="btn btn-secondary btn-sm" href="/products/edit/@product.Id">
+                        <span class="bi-pencil-square"></span> Editar
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

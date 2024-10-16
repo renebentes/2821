@@ -1,0 +1,64 @@
+﻿@page "/products/edit/{id:int}"
+
+<PageTitle>Edit Product</PageTitle>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Edit Product</h1>
+</div>
+
+<EditForm Model="Model" OnValidSubmit="HandleSubmitAsync" FormName="@(nameof(EditProductInput))">
+    <DataAnnotationsValidator />
+
+    <div class="row mb-3">
+        <div class="col-9">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title <span class="text-danger" >*</span></label>
+                <InputText id="title" class="form-control" @bind-Value="Model.Title" />
+                <ValidationMessage For="@(()=>Model.Title)"/>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <InputTextArea id="description" class="form-control form-control-lg" @bind-Value="Model.Description" />
+                <ValidationMessage For="@(()=>Model.Description)" />
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
+                <InputSelect id="category" class="form-select" aria-label="Select Category"
+                             @bind-Value="Model.CategoryId">
+                    <option></option>
+                    @foreach (var category in _categories)
+                    {
+                        <option value="@category.Id">@category.Title</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(()=>Model.CategoryId)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <InputFile id="image" class="form-control" @bind-Value="Model.Image" accept=".png,.jpeg" />
+                <ValidationMessage For="@(()=>Model.Image)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Price <span class="text-danger">*</span></label>
+                <InputNumber id="price" class="form-control" @bind-Value="Model.Price" />
+                <ValidationMessage For="@(()=>Model.Price)" />
+            </div>
+        </div>
+    </div>
+
+
+    @if (!string.IsNullOrEmpty(_errorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @_errorMessage
+        </div>
+    }
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/products" class="btn btn-secondary">Cancel</a>
+
+</EditForm>
