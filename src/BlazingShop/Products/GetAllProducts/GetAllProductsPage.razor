@@ -5,6 +5,8 @@
 
 @inject AppDbContext _context;
 
+@attribute [StreamRendering()]
+
 <PageTitle>Products</PageTitle>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -17,7 +19,16 @@
     </div>
 </div>
 
-<ProductTableList Products="_products" />
+@if(!_products.Any())
+{
+    <div class="text-center">
+        <div class="spinner-border text-secondary" aria-hidden="true" ></div>
+        <p role="status">Carregando produtos. Aguarde...</p>
+    </div>
+} else
+{
+    <ProductTableList Products="_products" />
+}
 
 @code {
     private List<Product> _products = [];
