@@ -46,7 +46,8 @@ public partial class CreateProductPage : ComponentBase
     }
 
     protected override async Task OnInitializedAsync()
-    => _categories = await Context.Categories.AsNoTracking()
+        => _categories = await Context.Categories
+        .AsNoTracking()
         .Select(c => new GetCategoriesQuery(c.Id, c.Title))
         .ToListAsync();
 }

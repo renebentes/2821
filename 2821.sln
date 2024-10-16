@@ -9,8 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingShop", "src\BlazingS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{015B8E12-77B4-4349-B5D4-D7DB3A344093}"
 	ProjectSection(SolutionItems) = preProject
-		Directory.Build.props = Directory.Build.props
 		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Global

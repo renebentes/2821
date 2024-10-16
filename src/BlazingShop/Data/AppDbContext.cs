@@ -1,6 +1,6 @@
-﻿using System.Reflection;
-using BlazingShop.Models;
+﻿using BlazingShop.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace BlazingShop.Data;
 
