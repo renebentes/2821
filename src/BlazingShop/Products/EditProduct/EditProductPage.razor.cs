@@ -26,13 +26,31 @@ public partial class EditProductPage : ComponentBase
     {
         try
         {
-            var category = await Context.Categories.FindAsync(Model.CategoryId);
+            var category = await Context.Categories
+                .FindAsync(Model.CategoryId);
 
             if (category is null)
             {
                 _errorMessage = $"Categoria com identificador {Model.CategoryId} não encontrada";
                 return;
             }
+
+            var product = await Context.Products
+                .FindAsync(Model.Id);
+
+            if (product is null)
+            {
+                _errorMessage = $"Produto com identificador {Model.Id} não encontrado";
+                return;
+            }
+
+            product.Title = Model.Title;
+            product.Category = category;
+            product.Description = Model.Description;
+            product.Image = Model.Image;
+            product.Price = Model.Price;
+            Context.Products.Update(product);
+            await Context.SaveChangesAsync();
 
             NavigationManager.NavigateTo("/products");
         }
