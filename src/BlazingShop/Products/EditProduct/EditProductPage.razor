@@ -6,15 +6,20 @@
     <h1 class="h2">Edit Product #@Id</h1>
 </div>
 
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="alert alert-danger" role="alert">@_errorMessage</div>
+}
+
 <EditForm Model="Model" OnValidSubmit="HandleSubmitAsync" FormName="@(nameof(EditProductInput))">
     <DataAnnotationsValidator />
 
     <div class="row mb-3">
         <div class="col-9">
             <div class="mb-3">
-                <label for="title" class="form-label">Title <span class="text-danger" >*</span></label>
+                <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
                 <InputText id="title" class="form-control" @bind-Value="Model.Title" />
-                <ValidationMessage For="@(()=>Model.Title)"/>
+                <ValidationMessage For="@(()=>Model.Title)" />
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
@@ -26,7 +31,7 @@
             <div class="mb-3">
                 <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
                 <InputSelect id="category" class="form-select" aria-label="Select Category"
-                             @bind-Value="Model.CategoryId">
+                    @bind-Value="Model.CategoryId">
                     <option></option>
                     @foreach (var category in _categories)
                     {
