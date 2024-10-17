@@ -50,6 +50,9 @@ public partial class EditProductPage : ComponentBase
            .Select(c => new GetCategoriesQuery(c.Id, c.Title))
            .ToListAsync();
 
-        Model = await Context.Products.FindAsync(Id);
+        Model = await Context.Products
+            .Include(p => p.Category)
+            .AsNoTracking()
+            .SingleOrDefaultAsync(p => p.Id == Id) ?? new EditProductInput();
     }
 }
