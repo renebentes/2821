@@ -1,0 +1,36 @@
+﻿@page "/status-errors/{statusCode:int}"
+@layout HeadlessLayout
+@using Microsoft.AspNetCore.Http.HttpResults
+
+<PageTitle>| BlazingShop</PageTitle>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-10 col-md-8 col-lg-6 col-xxl-5 text-center">
+            <h1 class="display-1 fw-bolder text-secondary me-4">@StatusCode</h1>
+            <h4 class="pt-3">@_statusErrorResponse.Title</h4>
+            <p>@_statusErrorResponse.Message</p>
+            <a class="btn btn-primary" href="/">Take me home</a>
+        </div>
+
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int StatusCode { get; set; }
+
+    private StatusErrorResponse _statusErrorResponse = new (string.Empty, string.Empty);
+
+    protected override void OnInitialized()
+        => _statusErrorResponse = ProccessStatusCode();
+
+    private StatusErrorResponse ProccessStatusCode()
+        => StatusCode switch
+        {
+            404 => new ("The page you're looking for is not found.", "Make sure the address is correct and that the page hasn't moved."),
+            500 => new("Whoops, something went wrong!","Try refreshing the page, or going back and attempting the action again.");
+            _ => throw new NotSupportedException($"The {StatusCode} conversion is not supported.")
+        };
+}
+
