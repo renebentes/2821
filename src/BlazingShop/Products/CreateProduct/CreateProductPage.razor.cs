@@ -1,6 +1,6 @@
+using BlazingShop.Categories.GetCategories;
 using BlazingShop.Data;
 using BlazingShop.Models;
-using BlazingShop.Products.Common;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +8,7 @@ namespace BlazingShop.Products.CreateProduct;
 
 public partial class CreateProductPage : ComponentBase
 {
-    private IEnumerable<GetCategoriesQuery> _categories = [];
+    private IEnumerable<GetCategoriesResponse> _categories = [];
 
     private string _errorMessage = string.Empty;
 

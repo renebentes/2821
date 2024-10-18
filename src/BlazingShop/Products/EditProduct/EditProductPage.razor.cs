@@ -1,5 +1,5 @@
-﻿using BlazingShop.Data;
-using BlazingShop.Products.Common;
+﻿using BlazingShop.Categories.GetCategories;
+using BlazingShop.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +7,7 @@ namespace BlazingShop.Products.EditProduct;
 
 public partial class EditProductPage : ComponentBase
 {
-    private IEnumerable<GetCategoriesQuery> _categories = [];
+    private IEnumerable<GetCategoriesResponse> _categories = [];
     private string _errorMessage = string.Empty;
 
     [Inject]
@@ -68,6 +68,7 @@ public partial class EditProductPage : ComponentBase
         _categories = await Context
             .Categories
             .AsNoTracking()
-            .SingleOrDefaultAsync(p => p.Id == Id) ?? new EditProductInput();
+            .Select(c => new GetCategoriesResponse(c.Id, c.Title))
+            .ToListAsync();
     }
 }
