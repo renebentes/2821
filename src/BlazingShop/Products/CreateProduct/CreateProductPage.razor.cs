@@ -33,7 +33,13 @@ public partial class CreateProductPage : ComponentBase
                 return;
             }
 
-            var product = new Product(Model.Title, Model.Description, Model.Image, Model.Price, category);
+            var product = new Product(
+                Model.Title,
+                Model.Description,
+                Model.Image,
+                Model.Price,
+                category
+            );
             await Context.Products.AddAsync(product);
             await Context.SaveChangesAsync();
             NavigationManager.NavigateTo("/products");
@@ -46,8 +52,9 @@ public partial class CreateProductPage : ComponentBase
     }
 
     protected override async Task OnInitializedAsync()
-        => _categories = await Context.Categories
-        .AsNoTracking()
-        .Select(c => new GetCategoriesQuery(c.Id, c.Title))
-        .ToListAsync();
+        => _categories = await Context
+            .Categories
+            .AsNoTracking()
+            .Select(c => new GetCategoriesResponse(c.Id, c.Title))
+            .ToListAsync();
 }

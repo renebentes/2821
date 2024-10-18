@@ -1,4 +1,4 @@
-﻿using BlazingShop.Models;
+using BlazingShop.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 

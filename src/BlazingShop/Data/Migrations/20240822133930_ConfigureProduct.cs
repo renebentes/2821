@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -16,7 +16,8 @@ public partial class ConfigureProduct : Migration
             type: "MONEY",
             nullable: false,
             oldClrType: typeof(decimal),
-            oldType: "TEXT");
+            oldType: "TEXT"
+        );
 
         migrationBuilder.AlterColumn<string>(
             name: "Image",
@@ -24,7 +25,8 @@ public partial class ConfigureProduct : Migration
             type: "TEXT",
             nullable: true,
             oldClrType: typeof(string),
-            oldType: "TEXT");
+            oldType: "TEXT"
+        );
 
         migrationBuilder.AlterColumn<string>(
             name: "Description",
@@ -32,7 +34,8 @@ public partial class ConfigureProduct : Migration
             type: "TEXT",
             nullable: true,
             oldClrType: typeof(string),
-            oldType: "TEXT");
+            oldType: "TEXT"
+        );
     }
 
     /// <inheritdoc />
@@ -44,7 +47,8 @@ public partial class ConfigureProduct : Migration
             type: "TEXT",
             nullable: false,
             oldClrType: typeof(decimal),
-            oldType: "MONEY");
+            oldType: "MONEY"
+        );
 
         migrationBuilder.AlterColumn<string>(
             name: "Image",
@@ -54,7 +58,8 @@ public partial class ConfigureProduct : Migration
             defaultValue: "",
             oldClrType: typeof(string),
             oldType: "TEXT",
-            oldNullable: true);
+            oldNullable: true
+        );
 
         migrationBuilder.AlterColumn<string>(
             name: "Description",
@@ -64,6 +69,7 @@ public partial class ConfigureProduct : Migration
             defaultValue: "",
             oldClrType: typeof(string),
             oldType: "TEXT",
-            oldNullable: true);
+            oldNullable: true
+        );
     }
 }

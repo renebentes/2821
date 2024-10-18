@@ -1,4 +1,4 @@
-﻿namespace BlazingShop.Models;
+namespace BlazingShop.Models;
 
 public class Product
 {
@@ -13,7 +13,6 @@ public class Product
 
     private Product()
     {
-
     }
 
     public Category Category { get; set; } = null!;

@@ -1,4 +1,4 @@
-﻿using BlazingShop.Data;
+using BlazingShop.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazingShop.Extensions;
@@ -7,7 +7,10 @@ public static class ServiceCollectionExtensions
 {
     private const string DefaultConnection = nameof(DefaultConnection);
 
-    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPersistence(
+        this IServiceCollection services,
+        IConfiguration configuration
+    )
     {
         services.AddDbContext<AppDbContext>(options
             => options.UseSqlite(configuration.GetConnectionString(DefaultConnection))

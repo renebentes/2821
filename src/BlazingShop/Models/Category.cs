@@ -1,13 +1,13 @@
-﻿namespace BlazingShop.Models;
+namespace BlazingShop.Models;
 
 public class Category
 {
-
     public Category(int id, string title)
     {
         Id = id;
         Title = title;
     }
+
     private Category()
     {
     }

@@ -26,7 +26,8 @@ public partial class EditProductPage : ComponentBase
     {
         try
         {
-            var category = await Context.Categories
+            var category = await Context
+                .Categories
                 .FindAsync(Model.CategoryId);
 
             if (category is null)
@@ -35,7 +36,8 @@ public partial class EditProductPage : ComponentBase
                 return;
             }
 
-            var product = await Context.Products
+            var product = await Context
+                .Products
                 .FindAsync(Model.Id);
 
             if (product is null)
@@ -63,13 +65,8 @@ public partial class EditProductPage : ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
-        _categories = await Context.Categories
-           .AsNoTracking()
-           .Select(c => new GetCategoriesQuery(c.Id, c.Title))
-           .ToListAsync();
-
-        Model = await Context.Products
-            .Include(p => p.Category)
+        _categories = await Context
+            .Categories
             .AsNoTracking()
             .SingleOrDefaultAsync(p => p.Id == Id) ?? new EditProductInput();
     }
