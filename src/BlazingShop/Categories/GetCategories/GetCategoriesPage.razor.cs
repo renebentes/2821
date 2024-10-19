@@ -5,9 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlazingShop.Categories.GetCategories;
 
-public partial class GetCategoriesPage : ComponentBase
+public partial class GetCategoriesPage
 {
-
     private IEnumerable<GetCategoriesResponse> _categories = [];
 
     [Inject]
@@ -15,15 +14,10 @@ public partial class GetCategoriesPage : ComponentBase
 
     public async Task<GridDataProviderResult<GetCategoriesResponse>> CategoriesDataProvider(GridDataProviderRequest<GetCategoriesResponse> request)
     {
-        _categories ??= await GetCategories();
+        _categories = await GetCategories();
         return await Task.FromResult(request.ApplyTo(_categories));
     }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await Task.Delay(5000);
-        _categories ??= await GetCategories();
-    }
 
     private async Task<IEnumerable<GetCategoriesResponse>> GetCategories()
         => await Context

@@ -1,6 +1,5 @@
-﻿@page "/categories"
+@page "/categories"
 @rendermode InteractiveServer
-@attribute [StreamRendering()]
 
 <PageTitle>Categories | BlazingShop</PageTitle>
 
@@ -15,21 +14,9 @@
         </div>
     </div>
 </div>
-@if (!_categories.Any())
-{
-    <div class="text-center">
-    <div class="spinner-border text-secondary" aria-hidden="true"></div>
-    <p role="status">Carregando produtos. Aguarde...</p>
-</div>
-}
-else
-{
 
-    <Grid TItem="GetCategoriesResponse" Class="table table-hover table-bordered table-striped" Data="@_categories">
-    @* AllowFiltering="true" AllowPaging="true" PageSize="5" AllowSorting="true"
-    AllowSelection="true" SelectionMode="GridSelectionMode.Multiple" SelectedItemsChanged="OnSelectedItemsChanged"
-    Responsive="true" >*@
-
+<Grid TItem="GetCategoriesResponse" Class="table table-hover table-bordered table-striped"
+DataProvider="CategoriesDataProvider" AllowPaging="true" AllowSorting="true">
     <GridColumns>
         <GridColumn TItem="GetCategoriesResponse" HeaderText="Id" PropertyName="Id" SortKeySelector="item => item.Id">
             @context.Id
@@ -38,6 +25,10 @@ else
             SortKeySelector="item => item.Title">
             @context.Title
         </GridColumn>
+        <GridColumn TItem="GetCategoriesResponse">
+            <a class="text-secondary" href="/categories/edit/@context.Id" title="Edit">
+                <i class="bi bi-pencil-square"></i>
+            </a>
+        </GridColumn>
     </GridColumns>
 </Grid>
-}
