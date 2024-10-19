@@ -70,5 +70,11 @@ public partial class EditProductPage : ComponentBase
             .AsNoTracking()
             .Select(c => new GetCategoriesResponse(c.Id, c.Title))
             .ToListAsync();
+
+        Model = await Context
+                .Products
+                .Include(p => p.Category)
+                .AsNoTracking()
+                .SingleOrDefaultAsync(p => p.Id == Id) ?? new EditProductInput();
     }
 }
