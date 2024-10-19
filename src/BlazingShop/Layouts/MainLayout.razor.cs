@@ -1,4 +1,3 @@
-using System;
 using BlazorBootstrap;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
@@ -7,10 +6,8 @@ namespace BlazingShop.Layouts;
 
 public partial class MainLayout : LayoutComponentBase
 {
-
+    public Sidebar Sidebar = default!;
     private IEnumerable<NavItem> _navItems = default!;
-
-    public Sidebar _sidebar = default!;
 
     private IEnumerable<NavItem> GetNavItems()
     {
@@ -29,5 +26,4 @@ public partial class MainLayout : LayoutComponentBase
         _navItems ??= GetNavItems();
         return await Task.FromResult(request.ApplyTo(_navItems));
     }
-
 }
