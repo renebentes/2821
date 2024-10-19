@@ -1,0 +1,35 @@
+@page "/products"
+@rendermode InteractiveServer
+
+<PageTitle>Products | BlazingShop</PageTitle>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Products</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <a href="products/create" class="btn btn-primary btn-sm"><i class="bi-plus-lg"></i>
+                New</a>
+        </div>
+    </div>
+</div>
+
+<Grid TItem="GetProductsResponse" Class="table table-hover table-bordered table-striped" DataProvider="ProductsDataProvider">
+    <GridColumn TItem="GetProductsResponse" HeaderText="Product" PropertyName="Title" TextNoWrap="true">
+        @if (!string.IsNullOrEmpty(context.Image))
+        {
+            <Image Src="@context.Image" Class="img-thumbnail" Alt="@context.Title"/>
+        }
+        <p class="mb-0">@context.Title</p>
+    </GridColumn>
+    <GridColumn TItem="GetProductsResponse" HeaderText="Category" PropertyName="Category">
+        @context.Category
+    </GridColumn>
+    <GridColumn TItem="GetProductsResponse" HeaderText="Price" PropertyName="Price">
+        @context.Price.ToString("C")
+    </GridColumn>
+    <GridColumn TItem="GetProductsResponse">
+        <a class="text-secondary" href="/products/edit/@context.Id" title="Edit">
+            <i class="bi bi-pencil-square"></i>
+        </a>
+    </GridColumn>
+</Grid>
