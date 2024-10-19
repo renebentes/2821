@@ -14,8 +14,8 @@ public partial class MainLayout : LayoutComponentBase
         _navItems = new List<NavItem>
         {
             new() { Id = "1", Href = "/", IconName = IconName.HouseDoorFill, Text = "Home", Match=NavLinkMatch.All},
-            new() { Id = "3", Href = "/categories", IconName = IconName.Table, Text = "Categories"},
-            new() { Id = "2", Href = "/products", IconName = IconName.PlusSquareFill, Text = "Products"}
+            new() { Id = "2", Href = "/categories", IconName = IconName.BookmarkFill, Text = "Categories"},
+            new() { Id = "3", Href = "/products", IconName = IconName.Boxes, Text = "Products"}
         };
 
         return _navItems;
