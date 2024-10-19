@@ -1,4 +1,4 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <div class="bb-page">
     <Sidebar @ref="Sidebar" IconName="IconName.BootstrapFill" Title="BlazingShop" DataProvider="SidebarDataProvider" />
@@ -9,7 +9,9 @@
         </div>
 
         <article class="content px-4">
-            @Body
+            <div class="container-fluid">
+                @Body
+            </div>
         </article>
     </main>
 </div>
