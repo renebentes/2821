@@ -18,9 +18,6 @@ public partial class GetProductsPage
         return await Task.FromResult(request.ApplyTo(_products));
     }
 
-    protected override async Task OnInitializedAsync()
-        => _products = await GetProductsAsync();
-
     private async Task<IEnumerable<GetProductsResponse>> GetProductsAsync()
         => await Context
             .Products
