@@ -2,23 +2,25 @@
 
 <PageTitle>Create Category</PageTitle>
 
-<EditForm Model="_model" FormName="@(nameof(CreateCategoryInput))">
+<h1>New Category</h1>
+
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="alert alert-danger" role="alert">@_errorMessage</div>
+}
+
+<EditForm Model="Model" FormName="@(nameof(CreateCategoryInput))" OnValidSubmit="OnValidateSubmitAsync">
     <DataAnnotationsValidator />
     <div class="row mb-3">
         <div class="col-9">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <InputText id="title" class="form-control" @bind-Value="_model.Title" />
+                <InputText id="title" class="form-control" @bind-Value="Model.Title" />
+                <ValidationMessage For="@(() => Model.Title)" />
             </div>
         </div>
     </div>
 
     <button type="submit" class="btn btn-success">Save</button>
-    <a href="/products" class="btn btn-secondary">Cancel</a>
+    <a href="/categories" class="btn btn-secondary">Cancel</a>
 </EditForm>
-
-@code {
-    private CreateCategoryInput _model = new();
-
-    async Task OnValidateSubmitAsync() => await Task.Delay(1000);
-}
