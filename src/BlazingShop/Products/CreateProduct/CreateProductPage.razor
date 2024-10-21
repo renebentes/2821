@@ -4,6 +4,11 @@
 
 <h1>New Product</h1>
 
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="alert alert-danger" role="alert">@_errorMessage</div>
+}
+
 <EditForm Model="Model" OnValidSubmit="HandleSubmitAsync" FormName="@(nameof(CreateProductInput))">
     <DataAnnotationsValidator />
     <ValidationSummary />
@@ -24,33 +29,27 @@
                 <label for="category" class="form-label">Category</label>
                 <InputSelect id="category" class="form-select" aria-label="Select Category"
                     @bind-Value="Model.CategoryId">
-                    <option></option>
                     @foreach (var category in _categories)
                     {
                         <option value="@category.Id">@category.Title</option>
                     }
                 </InputSelect>
+                <ValidationMessage For="@(() => Model.CategoryId)" />
             </div>
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 <InputFile id="image" class="form-control" @bind-Value="Model.Image" accept=".png,.jpeg" />
+                <ValidationMessage For="@(() => Model.Image)" />
             </div>
 
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <InputNumber id="price" class="form-control" @bind-Value="Model.Price" />
+                <ValidationMessage For="@(() => Model.Price)" />
             </div>
         </div>
     </div>
-
-
-    @if (!string.IsNullOrEmpty(_errorMessage))
-    {
-        <div class="alert alert-danger" role="alert">
-            @_errorMessage
-        </div>
-    }
 
     <button type="submit" class="btn btn-success">Save</button>
     <a href="/products" class="btn btn-secondary">Cancel</a>
