@@ -1,5 +1,3 @@
-using BlazingShop.Data;
-
 namespace BlazingShop.Extensions;
 
 public static class WebApplicationExtensions

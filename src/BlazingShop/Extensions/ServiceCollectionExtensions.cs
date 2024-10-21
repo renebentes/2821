@@ -1,6 +1,3 @@
-using BlazingShop.Data;
-using Microsoft.EntityFrameworkCore;
-
 namespace BlazingShop.Extensions;
 
 public static class ServiceCollectionExtensions

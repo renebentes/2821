@@ -1,4 +1,3 @@
-using BlazingShop.Models;
 using BlazingShop.Products.CreateProduct;
 using System.ComponentModel.DataAnnotations;
 

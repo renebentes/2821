@@ -1,8 +1,4 @@
 using BlazingShop.Categories.GetCategories;
-using BlazingShop.Data;
-using BlazingShop.Models;
-using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore;
 
 namespace BlazingShop.Products.CreateProduct;
 

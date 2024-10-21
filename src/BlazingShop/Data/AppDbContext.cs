@@ -1,5 +1,3 @@
-using BlazingShop.Models;
-using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace BlazingShop.Data;

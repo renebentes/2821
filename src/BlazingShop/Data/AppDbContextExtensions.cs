@@ -1,6 +1,3 @@
-using BlazingShop.Models;
-using Microsoft.EntityFrameworkCore;
-
 namespace BlazingShop.Data;
 
 public static class AppDbContextExtensions

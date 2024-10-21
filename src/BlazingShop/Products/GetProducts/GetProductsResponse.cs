@@ -1,5 +1,3 @@
-using BlazingShop.Models;
-
 namespace BlazingShop.Products.GetProducts;
 
 public sealed record GetProductsResponse(int Id, string Title, string Image, decimal Price, string Category)

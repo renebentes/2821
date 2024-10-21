@@ -1,7 +1,4 @@
-using BlazingShop.Data;
 using BlazorBootstrap;
-using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore;
 
 namespace BlazingShop.Categories.GetCategories;
 

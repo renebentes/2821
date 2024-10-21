@@ -1,7 +1,4 @@
-﻿using BlazingShop.Categories.GetCategories;
-using BlazingShop.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore;
+using BlazingShop.Categories.GetCategories;
 
 namespace BlazingShop.Products.EditProduct;
 

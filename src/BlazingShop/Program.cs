@@ -1,4 +1,3 @@
-using BlazingShop;
 using BlazingShop.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
