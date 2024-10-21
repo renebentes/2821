@@ -32,7 +32,6 @@
                 <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
                 <InputSelect id="category" class="form-select" aria-label="Select Category"
                     @bind-Value="Model.CategoryId">
-                    <option></option>
                     @foreach (var category in _categories)
                     {
                         <option value="@category.Id">@category.Title</option>

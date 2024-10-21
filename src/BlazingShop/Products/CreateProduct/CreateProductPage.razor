@@ -18,10 +18,12 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <InputText id="title" class="form-control" @bind-Value="Model.Title" />
+                <ValidationMessage For="@(() => Model.Title)" />
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <InputTextArea id="description" class="form-control form-control-lg" @bind-Value="Model.Description" />
+                <ValidationMessage For="@(() => Model.Description)" />
             </div>
         </div>
         <div class="col-3">
