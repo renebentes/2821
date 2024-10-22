@@ -16,7 +16,7 @@ public static class AppDbContextExtensions
     {
         if (!context.Categories.Any())
         {
-            context.Categories.Add(new Category(1, "Sem Categoria"));
+            context.Categories.Add(new Category("Sem Categoria"));
             context.SaveChanges();
         }
     }

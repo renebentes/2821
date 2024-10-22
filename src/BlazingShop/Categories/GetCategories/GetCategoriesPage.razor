@@ -16,7 +16,7 @@
 </div>
 
 <Grid TItem="GetCategoriesResponse" Class="table table-hover table-bordered table-striped"
-DataProvider="CategoriesDataProvider" AllowPaging="true" AllowSorting="true">
+    DataProvider="CategoriesDataProvider" AllowPaging="true" AllowSorting="true">
     <GridColumns>
         <GridColumn TItem="GetCategoriesResponse" HeaderText="Id" PropertyName="Id" SortKeySelector="item => item.Id">
             @context.Id
